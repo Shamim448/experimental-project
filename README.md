@@ -1,2 +1,2 @@
 # payment-details
-Web API with Angular
+Payment Details CRUD using Web API with Angular
