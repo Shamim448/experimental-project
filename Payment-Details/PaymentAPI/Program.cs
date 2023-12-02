@@ -1,3 +1,5 @@
+using Microsoft.EntityFrameworkCore;
+using PaymentAPI.Data;
 using Serilog;
 using Serilog.Events;
 
@@ -12,6 +14,8 @@ builder.Host.UseSerilog((ctx, lc) => lc
 try
 {
     // Add services to the container.
+    builder.Services.AddDbContext<ApplicationDbContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
     builder.Services.AddControllers();
     // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
