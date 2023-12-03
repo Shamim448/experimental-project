@@ -1,1 +1,29 @@
-<p>payment-details-form works!</p>
+<form #form = "ngForm" (submit)="onSubmit(form)">
+    <input type="hidden" name="id" [value]="paymentservice.formData.id">
+    <div class="mb-3">
+        <label>Card Holder Name</label>
+        <input class="form-control form-control-lg" placeholder="Name of Card Owner"
+        #cardHolderName ="ngModel" name="cardHolderName" [(ngModel)] = paymentservice.formData.cardHolderName />
+    </div>
+    <div class="mb-3">
+        <label>Card Number</label>
+        <input class="form-control form-control-lg" placeholder="16 Digit Card Number"
+        #cardNumber ="ngModel" name="cardNumber" [(ngModel)] = paymentservice.formData.cardNumber />
+    </div>
+    <div class="row">
+        <div class="mb-3 col-6">
+            <label>Card Expiration Date</label>
+            <input class="form-control form-control-lg" placeholder="MM/YY"
+            #expirationDate ="ngModel" name="expirationDate" [(ngModel)] = paymentservice.formData.expirationDate />
+        </div>
+        <div class="mb-3 col-6">
+            <label>Security Code</label>
+            <input class="form-control form-control-lg" placeholder="CVV" type="password"
+            #securityCode ="ngModel" name="securityCode" [(ngModel)] = paymentservice.formData.securityCode />
+        </div>
+    </div>
+    <div class="d-grid">
+        <button class="btn btn-lg btn-success" type="submit">Submit</button>
+    </div>
+    
+</form>

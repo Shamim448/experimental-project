@@ -10,11 +10,12 @@ export class PaymentDetaileService {
 
   constructor(private http:HttpClient) { }
 
- url:string = environment.appUrl;
-  list:PaymentDetaile[] = []
+  url:string = environment.appUrl + 'PaymentDetailes';
+  list:PaymentDetaile[] = [];
+  formData : PaymentDetaile = new PaymentDetaile();
 
   refreshList(){
-    this.http.get(this.url + 'PaymentDetailes')
+    this.http.get(this.url)
     .subscribe({
       next: rs =>{
         this.list = rs as PaymentDetaile[]
@@ -23,5 +24,10 @@ export class PaymentDetaileService {
         console.log(err)
       }
     })
+  }
+
+  //post value 
+  postPaymentDetaile(){
+   return this.http.post(this.url, this.formData)
   }
 }

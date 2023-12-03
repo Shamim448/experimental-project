@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { PaymentDetaileService } from '../../sheard/payment-detaile.service';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-payment-details-form',
@@ -7,5 +9,17 @@ import { Component } from '@angular/core';
 })
 export class PaymentDetailsFormComponent {
 
-  
+    constructor(public paymentservice: PaymentDetaileService ){}
+
+    onSubmit(form: NgForm) {
+    
+      this.paymentservice.postPaymentDetaile()
+      .subscribe({
+        next : res => {
+          console.log(res);
+        },
+        error: err => {console.log(err)}
+      })
+    
+    }
 }
