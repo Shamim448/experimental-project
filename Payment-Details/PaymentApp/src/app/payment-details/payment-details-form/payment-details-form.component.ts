@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { PaymentDetaileService } from '../../sheard/payment-detaile.service';
 import { NgForm } from '@angular/forms';
+import { PaymentDetaile } from '../../sheard/payment-detaile.model';
 
 @Component({
   selector: 'app-payment-details-form',
@@ -16,7 +17,7 @@ export class PaymentDetailsFormComponent {
       this.paymentservice.postPaymentDetaile()
       .subscribe({
         next : res => {
-          console.log(res);
+          this.paymentservice.list = res as PaymentDetaile[];
         },
         error: err => {console.log(err)}
       })
