@@ -16,6 +16,15 @@ export class PaymentDetailsFormComponent {
     onSubmit(form: NgForm) {
     this.paymentservice.formSubmited = true;
     if(form.valid){
+      if(this.paymentservice.formData.id == 0)
+        this.insertRecord(form)
+      else
+      this.updateRecord(form)
+    }
+    
+    }
+
+    insertRecord(form: NgForm){
       this.paymentservice.postPaymentDetaile()
       .subscribe({
         next : res => {
@@ -27,7 +36,18 @@ export class PaymentDetailsFormComponent {
         },
         error: err => {console.log(err)}
       })
-    }
-    
+    };
+    updateRecord(form: NgForm){
+      this.paymentservice.putPaymentDetaile()
+      .subscribe({
+        next : res => {
+          //reload page for shoing update
+          this.paymentservice.list = res as PaymentDetaile[];
+          //reset from after submit
+          this.paymentservice.resetForm(form)
+          this.toastr.info('Updated Successfully...', 'Payment Detail');
+        },
+        error: err => {console.log(err)}
+      })
     }
 }

@@ -28,11 +28,21 @@ export class PaymentDetaileService {
     })
   }
 
+
   //post value 
   postPaymentDetaile(){
-   return this.http.post(this.url, this.formData)
-  }
+    return this.http.post(this.url, this.formData)
+    }
 
+    //post value 
+  putPaymentDetaile(){
+    return this.http.put(this.url + '/' + this.formData.id, this.formData)
+   }
+
+  //Delete value 
+  deletePaymentDetaile(id:number){
+    return this.http.delete(this.url+ '/' + id)
+    }
   //Reset form
   resetForm(form:NgForm){
     form.form.reset()
