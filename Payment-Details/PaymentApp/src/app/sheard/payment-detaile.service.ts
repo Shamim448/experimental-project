@@ -14,6 +14,7 @@ export class PaymentDetaileService {
   url:string = environment.appUrl + 'PaymentDetailes';
   list:PaymentDetaile[] = [];
   formData : PaymentDetaile = new PaymentDetaile();
+  formSubmited : boolean = false;
 
   refreshList(){
     this.http.get(this.url)
@@ -36,5 +37,6 @@ export class PaymentDetaileService {
   resetForm(form:NgForm){
     form.form.reset()
     this.formData = new PaymentDetaile()
+    this.formSubmited = false;
   }
 }

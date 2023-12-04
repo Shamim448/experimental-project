@@ -14,7 +14,8 @@ export class PaymentDetailsFormComponent {
     constructor(public paymentservice: PaymentDetaileService, private toastr: ToastrService ){}
 
     onSubmit(form: NgForm) {
-    
+    this.paymentservice.formSubmited = true;
+    if(form.valid){
       this.paymentservice.postPaymentDetaile()
       .subscribe({
         next : res => {
@@ -26,6 +27,7 @@ export class PaymentDetailsFormComponent {
         },
         error: err => {console.log(err)}
       })
+    }
     
     }
 }

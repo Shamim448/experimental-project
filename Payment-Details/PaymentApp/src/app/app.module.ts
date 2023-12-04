@@ -22,6 +22,8 @@ import { ToastrModule } from 'ngx-toastr';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+
+    //Link= https://www.npmjs.com/package/ngx-toastr?activeTab=readme
     BrowserAnimationsModule, // required animations module
     ToastrModule.forRoot(), // ToastrModule added
   ],
