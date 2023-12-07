@@ -15,8 +15,14 @@ export class EmployeeService {
   employee:Employee = new Employee() //Insert Data
   employeeUrl:string = environment.baseUrl + "Employees"
 
+  //Getting All Record
   getEmployees():Observable<Employee[]>{
     return this.myHttp.get<Employee[]>(this.employeeUrl);
+  }
+
+  //Insert Redord
+  postEmployee(){
+    return this.myHttp.post(this.employeeUrl, this.employeeData);
   }
   
 }
