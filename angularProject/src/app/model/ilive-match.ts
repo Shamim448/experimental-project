@@ -1,5 +1,6 @@
 export interface IliveMatch {
-    matchHeading:string;
+    index:number;
+    matchHeading:any;
     matchNo:string;
     matchLocation:string
     batingTeam:string

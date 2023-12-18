@@ -20,7 +20,13 @@ Steps :
         -> Create components
         -> setup route
         -> Create Menu by chatGPT
-        
+        -> Create Interface and model class
+        -> Create service
+            create method for data load(static data)
+        -> call service where i show data
+            -> Dependency Injection
+            -> OnInit Method implement
+
 
         
             
