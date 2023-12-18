@@ -17,5 +17,8 @@ Steps :
                 @tailwind base;
                 @tailwind components;
                 @tailwind utilities;
+        -> Create components
+        -> setup route
+        
         
             
