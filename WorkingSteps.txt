@@ -1,0 +1,21 @@
+Steps :
+    Angular
+        -> Requirements
+            -> Nodejs
+            -> npm
+            -> angular cli
+                npm install -g @angular/cli@version No
+
+        -> Create Project --> 17
+            -> ng new projectname
+        -> install tailwindcss
+            npm install -D tailwindcss
+            npx tailwindcss init
+            -> add this line into tailwind.config.js
+                -> content["./src/**/*.{html,js}"]
+            -> add line in style.css
+                @tailwind base;
+                @tailwind components;
+                @tailwind utilities;
+        
+            
