@@ -8,22 +8,27 @@ import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.com
 export const routes: Routes = [
     {
         path:"home",
-        component: HomeComponent
+        component: HomeComponent,
+        title : "Home | Shamimifo"
     },
     {
         path:"live",
-        component: LiveComponent
+        component: LiveComponent,
+        title : "Live | Shamimifo"
     },
     {
         path:"history",
-        component: HistoryComponent
+        component: HistoryComponent,
+        title : "History | Shamimifo"
     },
     {
         path:"point-table",
-        component: PointTableComponent
+        component: PointTableComponent,
+        title : "Point Table | Shamimifo"
     },
     {
         path:"**",
-        component: PageNotFoundComponent
+        component: PageNotFoundComponent,
+        title : "404 | Shamimifo"
     },
 ];

@@ -1,1 +1,22 @@
+
+<div class="bg-blue-500 p-4">
+  <div class="container mx-auto flex items-center justify-between">
+      <!-- Brand Name -->
+      <div class="text-white text-xl font-bold">
+        <a href="#" class="text-3xl font-bold text-white">
+          Shamim<span class="text-orange-500">Info</span>
+        </a>
+      </div>
+      
+
+      <!-- Navigation Menu -->
+      <nav class="space-x-4">
+          <a [routerLink]="'/home'" href="#" class="text-white hover:text-purple-300">Home</a>
+          <a [routerLink]="'/live'"href="#" class="text-white hover:text-purple-300">Live Match</a>
+          <a [routerLink]="'/history'"href="#" class="text-white hover:text-purple-300">History</a>
+          <a [routerLink]="'/point-table'"href="#" class="text-white hover:text-purple-300">Point Table</a>
+      </nav>
+  </div>
+</div>
+
 <router-outlet></router-outlet>

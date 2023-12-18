@@ -19,6 +19,8 @@ Steps :
                 @tailwind utilities;
         -> Create components
         -> setup route
+        -> Create Menu by chatGPT
         
+
         
             
